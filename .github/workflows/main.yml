@@ -41,12 +41,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
 
       - name: Install python dependencies
         run: |
@@ -67,22 +67,22 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
       - name: Install python dependencies
         run: |
           pip install --user --upgrade pip
-          pip install --upgrade setuptools wheel twine check-wheel-contents
+          pip install --upgrade setuptools build twine wheel check-wheel-contents
           pip --version
 
-      - name: Buil package
+      - name: Build package
         run: |
           python -m build
 
@@ -95,7 +95,7 @@ jobs:
 
       - name: Check wheel contents
         run: |
-          check-wheel-contentspip  dist/*.whl --ignore W007,W008pi
+          check-wheel-contents  dist/*.whl --ignore W007,W008
 
       - uses: actions/upload-artifact@v2
         with:
@@ -117,7 +117,7 @@ jobs:
 
     steps:
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
