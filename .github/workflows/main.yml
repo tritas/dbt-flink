@@ -51,8 +51,6 @@ jobs:
       - name: Install python dependencies
         run: |
           pip install --user --upgrade pip
-          pip install pre-commit
-          pip install mypy==0.782
           pip install -r dev-requirements.txt
           pip --version
           pre-commit --version
@@ -76,13 +74,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.10
 
       - name: Install python dependencies
         run: |
           pip install --user --upgrade pip
           pip install --upgrade setuptools wheel twine check-wheel-contents
           pip --version
+
+      - name: Buil package
+        run: |
+          python -m build
 
       - name: Show distributions
         run: ls -lh dist/
@@ -93,7 +95,7 @@ jobs:
 
       - name: Check wheel contents
         run: |
-          check-wheel-contents dist/*.whl --ignore W007,W008
+          check-wheel-contentspip  dist/*.whl --ignore W007,W008pi
 
       - uses: actions/upload-artifact@v2
         with:
