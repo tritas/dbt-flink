@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tritas/dbt/ec7dee39f793aa4f7dd3dae37282cc87664813e4/etc/dbt-logo-full.svg" alt="dbt logo" width="500"/>
+  <img src="https://raw.githubusercontent.com/tritas/dbt-flink/main/etc/dbt-signature_tm.png" alt="dbt logo" />
 </p>
 <p align="center">
   <a href="https://github.com/tritas/dbt-flink/actions/workflows/main.yml">
