@@ -1,3 +1,7 @@
+<h2>
+  <bold>Warning: This package is not functional yet</bold>
+</h2>
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/tritas/dbt-flink/main/etc/dbt-signature_tm.png" alt="dbt logo" />
 </p>
@@ -9,6 +13,7 @@
     <img src="https://github.com/tritas/dbt-flink/actions/workflows/integration.yml/badge.svg?event=push" alt="Integration Tests Badge"/>
   </a>
 </p>
+
 
 **[dbt](https://www.getdbt.com/)** enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.
 
