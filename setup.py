@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
-import sys
 import re
+import sys
 
 if sys.version_info < (3, 7):
     print("Error: dbt does not support this version of Python.")
@@ -49,7 +49,7 @@ def _get_dbt_core_version():
 
 package_name = "dbt-flink"
 # make sure this always matches dbt/adapters/{adapter}/__version__.py
-package_version = "1.0.8"
+package_version = "1.2.1"
 dbt_core_version = _get_dbt_core_version()
 description = """The Flink adapter plugin for dbt"""
 

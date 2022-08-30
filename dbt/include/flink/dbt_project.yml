@@ -1,5 +1,5 @@
 name: dbt_flink
-version: 1.0.8
+version: 1.2.1
 config-version: 2
 
 macro-paths: ["macros"]

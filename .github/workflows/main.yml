@@ -51,7 +51,7 @@ jobs:
       - name: Install python dependencies
         run: |
           pip install --user --upgrade pip
-          pip install -r dev-requirements.txt
+          pip install -r requirements-dev.txt
           pip --version
           pre-commit --version
           mypy --version

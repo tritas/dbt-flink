@@ -1,8 +1,8 @@
 from contextlib import contextmanager
 from dataclasses import dataclass
+
 import dbt.exceptions  # noqa
 from dbt.adapters.base import Credentials
-
 from dbt.adapters.sql import SQLConnectionManager as connection_cls
 
 
