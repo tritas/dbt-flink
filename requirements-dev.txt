@@ -1,6 +1,7 @@
 black==22.6.0
 build
 bumpversion
+check-wheel-contents
 dbt-core==1.2.1
 dbt-tests-adapter==1.2.1
 flake8

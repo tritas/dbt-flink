@@ -50,6 +50,10 @@ integration: ## Runs flink integration tests with py310.
 	@\
 	tox -e py310-flink --
 
+.PHONY:  build
+build: ## build package
+	python -m build
+
 .PHONY:  clean
 clean: clean-build clean-cache clean-test ## remove build and test artifacts and caches
 
@@ -80,8 +84,10 @@ clean-test: ## remove test and coverage artifacts
 	find . -type d -name "htmlcov" -exec rm -fr {} +
 
 upload: ## Create package and upload to pypi
-upload: package
-	python3 -m twine upload dist/* --non-interactive
+upload: build
+	twine check dist/*
+	check-wheel-contents dist/*.whl --ignore W007,W008
+	twine upload dist/* --non-interactive
 
 .PHONY: help
 help: ## Show this help message.
