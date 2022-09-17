@@ -3,7 +3,7 @@ PYTHON ?= python
 
 .PHONY: venv
 venv: ## Create venv and install adapter in develop mode
-	virtualenv -p python3.10 venv
+	virtualenv -p python3.8 venv
 	source venv/bin/activate && pip install -U pip && pip install -r requirements-dev.txt && pip install -e .
 
 .PHONY: mypy
@@ -33,22 +33,22 @@ linecheck: ## Checks for all Python lines 100 characters or more
 	find dbt -type f -name "*.py" -exec grep -I -r -n '.\{100\}' {} \;
 
 .PHONY: unit
-unit: ## Runs unit tests with py310.
+unit: ## Runs unit tests with py38.
 	@\
-	tox -e py310
+	tox -e py38
 
 .PHONY: test
-test: ## Runs unit tests with py310 and code checks against staged changes.
+test: ## Runs unit tests with py38 and code checks against staged changes.
 	@\
-	tox -p -e py310; \
+	tox -p -e py38; \
 	pre-commit run black-check --hook-stage manual | grep -v "INFO"; \
 	pre-commit run flake8-check --hook-stage manual | grep -v "INFO"; \
 	pre-commit run mypy-check --hook-stage manual | grep -v "INFO"
 
 .PHONY: integration
-integration: ## Runs flink integration tests with py310.
+integration: ## Runs flink integration tests with py38.
 	@\
-	tox -e py310-flink --
+	tox -e py38-flink --
 
 .PHONY:  build
 build: ## build package
