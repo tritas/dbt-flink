@@ -1,5 +1,5 @@
 apache-flink==1.15.2
-black==22.8.0
+black==22.10.0
 build
 bumpversion
 check-wheel-contents
