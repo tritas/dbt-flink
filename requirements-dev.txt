@@ -1,4 +1,4 @@
-apache-flink==1.15.2
+apache-flink==1.17.0
 black==22.12.0
 build
 bumpversion
